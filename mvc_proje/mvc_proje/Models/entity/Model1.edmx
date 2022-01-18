@@ -1,0 +1,241 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="mvcModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="anasayfa">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="menubaslik" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="menuicerik" Type="text" Nullable="false" />
+        </EntityType>
+        <EntityType Name="bilgi">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="baslik" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="icerik" Type="text" Nullable="false" />
+          <Property Name="tarih" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="geziler">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ka" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="tarih" Type="datetime" Nullable="false" />
+          <Property Name="sehir" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="kategori" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="baslik" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="icerik" Type="text" Nullable="false" />
+        </EntityType>
+        <EntityType Name="iletisim">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="eposta" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="telefon" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="adres" Type="text" Nullable="false" />
+        </EntityType>
+        <EntityType Name="kullanicilar">
+          <Key>
+            <PropertyRef Name="tc" />
+          </Key>
+          <Property Name="tc" Type="nvarchar" MaxLength="11" Nullable="false" />
+          <Property Name="ad" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="soyad" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="ka" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="sifre" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="email" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="yas" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="kontrol" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="resim">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="adi" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="yolu" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="mvcModelStoreContainer">
+          <EntitySet Name="anasayfa" EntityType="Self.anasayfa" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="bilgi" EntityType="Self.bilgi" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="geziler" EntityType="Self.geziler" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="iletisim" EntityType="Self.iletisim" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="kullanicilar" EntityType="Self.kullanicilar" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="resim" EntityType="Self.resim" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="mvcModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="anasayfa">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="menubaslik" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="menuicerik" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="bilgi">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="baslik" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="icerik" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="tarih" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="geziler">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ka" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="tarih" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="sehir" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="kategori" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="baslik" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="icerik" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="iletisim">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="eposta" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="telefon" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="adres" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="kullanicilar">
+          <Key>
+            <PropertyRef Name="tc" />
+          </Key>
+          <Property Name="tc" Type="String" MaxLength="11" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ad" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="soyad" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ka" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="sifre" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="yas" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="kontrol" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="resim">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="adi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="yolu" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="mvcEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="anasayfa" EntityType="Self.anasayfa" />
+          <EntitySet Name="bilgi" EntityType="Self.bilgi" />
+          <EntitySet Name="geziler" EntityType="Self.geziler" />
+          <EntitySet Name="iletisim" EntityType="Self.iletisim" />
+          <EntitySet Name="kullanicilar" EntityType="Self.kullanicilar" />
+          <EntitySet Name="resim" EntityType="Self.resim" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="mvcModelStoreContainer" CdmEntityContainer="mvcEntities">
+          <EntitySetMapping Name="anasayfa">
+            <EntityTypeMapping TypeName="mvcModel.anasayfa">
+              <MappingFragment StoreEntitySet="anasayfa">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="menubaslik" ColumnName="menubaslik" />
+                <ScalarProperty Name="menuicerik" ColumnName="menuicerik" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="bilgi">
+            <EntityTypeMapping TypeName="mvcModel.bilgi">
+              <MappingFragment StoreEntitySet="bilgi">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="baslik" ColumnName="baslik" />
+                <ScalarProperty Name="icerik" ColumnName="icerik" />
+                <ScalarProperty Name="tarih" ColumnName="tarih" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="geziler">
+            <EntityTypeMapping TypeName="mvcModel.geziler">
+              <MappingFragment StoreEntitySet="geziler">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="ka" ColumnName="ka" />
+                <ScalarProperty Name="tarih" ColumnName="tarih" />
+                <ScalarProperty Name="sehir" ColumnName="sehir" />
+                <ScalarProperty Name="kategori" ColumnName="kategori" />
+                <ScalarProperty Name="baslik" ColumnName="baslik" />
+                <ScalarProperty Name="icerik" ColumnName="icerik" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="iletisim">
+            <EntityTypeMapping TypeName="mvcModel.iletisim">
+              <MappingFragment StoreEntitySet="iletisim">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="eposta" ColumnName="eposta" />
+                <ScalarProperty Name="telefon" ColumnName="telefon" />
+                <ScalarProperty Name="adres" ColumnName="adres" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="kullanicilar">
+            <EntityTypeMapping TypeName="mvcModel.kullanicilar">
+              <MappingFragment StoreEntitySet="kullanicilar">
+                <ScalarProperty Name="tc" ColumnName="tc" />
+                <ScalarProperty Name="ad" ColumnName="ad" />
+                <ScalarProperty Name="soyad" ColumnName="soyad" />
+                <ScalarProperty Name="ka" ColumnName="ka" />
+                <ScalarProperty Name="sifre" ColumnName="sifre" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="yas" ColumnName="yas" />
+                <ScalarProperty Name="kontrol" ColumnName="kontrol" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="resim">
+            <EntityTypeMapping TypeName="mvcModel.resim">
+              <MappingFragment StoreEntitySet="resim">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="adi" ColumnName="adi" />
+                <ScalarProperty Name="yolu" ColumnName="yolu" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="true" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

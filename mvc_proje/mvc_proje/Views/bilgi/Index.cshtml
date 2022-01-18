@@ -1,0 +1,16 @@
+﻿@using mvc_proje.Models.entity
+@model List<bilgi>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_mainlayout.cshtml";
+}
+
+<div>
+
+    @foreach (var a in Model)
+    {
+        <h2>@a.baslik </h2><a>@a.tarih</a>
+        <p>@a.icerik</p>
+    }
+
+</div>

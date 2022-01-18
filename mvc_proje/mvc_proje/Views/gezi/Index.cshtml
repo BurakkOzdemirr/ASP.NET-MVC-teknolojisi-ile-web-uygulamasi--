@@ -1,0 +1,31 @@
+﻿@using mvc_proje.Models.entity
+@model List<geziler>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_mainlayout.cshtml";
+}
+
+<table class="table table-bordered" >
+    <tr>
+        <th>Paylaşan Kişi</th>
+        <th>Tarih</th>
+        <th>Şehir</th>
+        <th>Kategori</th>
+        <th>Gezi Başlığı</th>
+        <th>Gezi İçeriği</th>
+    </tr>
+    <tbody>
+        @foreach(var gezi in Model)
+        {
+            <tr>
+                <td>@gezi.ka</td>
+                <td>@gezi.tarih</td>
+                <td>@gezi.sehir</td>
+                <td>@gezi.kategori</td>
+                <td>@gezi.baslik</td>
+                <td>@gezi.icerik</td>
+            </tr>
+        }
+    </tbody>
+
+</table>

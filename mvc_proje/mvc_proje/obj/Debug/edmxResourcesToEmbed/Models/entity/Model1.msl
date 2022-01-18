@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="mvcModelStoreContainer" CdmEntityContainer="mvcEntities">
+    <EntitySetMapping Name="anasayfa">
+      <EntityTypeMapping TypeName="mvcModel.anasayfa">
+        <MappingFragment StoreEntitySet="anasayfa">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="menubaslik" ColumnName="menubaslik" />
+          <ScalarProperty Name="menuicerik" ColumnName="menuicerik" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="bilgi">
+      <EntityTypeMapping TypeName="mvcModel.bilgi">
+        <MappingFragment StoreEntitySet="bilgi">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="baslik" ColumnName="baslik" />
+          <ScalarProperty Name="icerik" ColumnName="icerik" />
+          <ScalarProperty Name="tarih" ColumnName="tarih" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="geziler">
+      <EntityTypeMapping TypeName="mvcModel.geziler">
+        <MappingFragment StoreEntitySet="geziler">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="ka" ColumnName="ka" />
+          <ScalarProperty Name="tarih" ColumnName="tarih" />
+          <ScalarProperty Name="sehir" ColumnName="sehir" />
+          <ScalarProperty Name="kategori" ColumnName="kategori" />
+          <ScalarProperty Name="baslik" ColumnName="baslik" />
+          <ScalarProperty Name="icerik" ColumnName="icerik" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="iletisim">
+      <EntityTypeMapping TypeName="mvcModel.iletisim">
+        <MappingFragment StoreEntitySet="iletisim">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="eposta" ColumnName="eposta" />
+          <ScalarProperty Name="telefon" ColumnName="telefon" />
+          <ScalarProperty Name="adres" ColumnName="adres" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="kullanicilar">
+      <EntityTypeMapping TypeName="mvcModel.kullanicilar">
+        <MappingFragment StoreEntitySet="kullanicilar">
+          <ScalarProperty Name="tc" ColumnName="tc" />
+          <ScalarProperty Name="ad" ColumnName="ad" />
+          <ScalarProperty Name="soyad" ColumnName="soyad" />
+          <ScalarProperty Name="ka" ColumnName="ka" />
+          <ScalarProperty Name="sifre" ColumnName="sifre" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="yas" ColumnName="yas" />
+          <ScalarProperty Name="kontrol" ColumnName="kontrol" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="resim">
+      <EntityTypeMapping TypeName="mvcModel.resim">
+        <MappingFragment StoreEntitySet="resim">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="adi" ColumnName="adi" />
+          <ScalarProperty Name="yolu" ColumnName="yolu" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

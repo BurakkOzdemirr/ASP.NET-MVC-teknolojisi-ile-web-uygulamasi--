@@ -1,0 +1,15 @@
+﻿@using mvc_proje.Models.entity
+@model List<anasayfa>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_mainlayout.cshtml";
+}
+<div>
+    
+    @foreach (var a in Model)
+    {
+        <h2>@a.menubaslik</h2>
+        <p>@a.menuicerik</p>
+    }
+    
+</div>
